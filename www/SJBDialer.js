@@ -16,7 +16,7 @@ module.exports = {
         if (platformId == 'ios') {
             exec(null, function(err) {
                 error(err);
-            }, "PhoneDialer", "dial", [phnum]);
+            }, "SJBDialer", "dial", [phnum]);
         } else {
             document.location.href = "tel:" + phnum
         }
