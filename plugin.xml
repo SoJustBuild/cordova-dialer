@@ -9,7 +9,16 @@
     SJB Dialer Plugin for Steroids.js
   </description>
 
-  <asset src="www/SJBDialer.js" target="plugins/SJBDialer.js" />
+  <!-- 
+       moving to js-module mode to inject the js into each page.
+       this is not ideal but steroid's handling of cordova and
+       its plugins is very shaky
+  -->
+  <!--<asset src="www/SJBDialer.js" target="plugins/SJBDialer.js" />-->
+	<js-module src="www/SJBDialer.js" name="SJBDialer">
+	    <clobbers target="SJBDialer" />
+	</js-module>
+
 
   <engines>
     <engine name="cordova" version=">=3.1.0" />
