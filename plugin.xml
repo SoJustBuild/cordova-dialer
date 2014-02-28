@@ -9,7 +9,7 @@
     SJB Dialer Plugin for Steroids.js
   </description>
 
-  <asset src="www/SJBDialerPlugin.js" target="plugins/SJBDialerPlugin.js" />
+  <asset src="www/SJBDialer.js" target="plugins/SJBDialer.js" />
 
   <engines>
     <engine name="cordova" version=">=3.1.0" />
