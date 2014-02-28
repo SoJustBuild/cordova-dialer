@@ -3,7 +3,7 @@
     id="com.sojustbuild.plugin.SJBDialer"
     version="1.0.0">
 
-    <name>SJB Cordova Dialer</name>
+    <name>SJBCordovaDialer</name>
 
   <description>
     SJB Dialer Plugin for Steroids.js
