@@ -9,11 +9,17 @@ module.exports = {
      *
      * @param {String, Function} The phone number to call, The callback error function
      */
-    dial: function(phnum, error) {
+    dial: function(phnum, success, error) {
         if (phnum == null)
             error("empty");
-        exec(null, function(err) {
-            error(err);
+        exec(function() {
+			if (typeof success === 'function') {
+				success();
+			}
+		}, function(err) {
+			if (typeof err === 'function') {
+				error(err);
+			}
         }, "SJBDialer", "dial", [phnum]);
     },
 };
