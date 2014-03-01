@@ -25,7 +25,7 @@
                                         cancelButtonTitle:@"Ok"
                                         otherButtonTitles: nil];
 	[alert show];
-    	[alert release];
+    	//[alert release];
 
         if (number != nil && [number length] > 0) {
             if ([number hasPrefix:@"tel:"]) {
