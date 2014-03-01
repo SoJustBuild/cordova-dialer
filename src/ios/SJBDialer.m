@@ -8,7 +8,6 @@
 
 #import "SJBDialer.h"
 #import <Cordova/CDV.h>
-#import <UIKit/UIKit.h>
 
 @implementation SJBDialer
 
@@ -18,10 +17,6 @@
         CDVPluginResult* pluginResult = nil;
         NSString* url;
         NSString* number = [command.arguments objectAtIndex:0];
-
-		UIAlertView *debugAlert=[[UIAlertView alloc] initWithTitle:@"Phone" message:@"In native code." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [debugAlert show];
-    	//[alert release];
 
         if (number != nil && [number length] > 0) {
             if ([number hasPrefix:@"tel:"]) {
