@@ -27,6 +27,7 @@ alert("start exec");
 		}
         }, "SJBDialer", "dial", [phnum]);
 }catch(e){alert('err in dial: '+e);}
+	alert('exec complete');
     },
 };
 

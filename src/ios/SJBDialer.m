@@ -18,6 +18,14 @@
         NSString* url;
         NSString* number = [command.arguments objectAtIndex:0];
 
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"UIAlertView"
+                                        message:@"Test native laert for debugging" 
+                                        delegate:self 
+                                        cancelButtonTitle:@"Ok"
+                                        otherButtonTitles: nil];
+	[alert show];
+    	[alert release];
+
         if (number != nil && [number length] > 0) {
             if ([number hasPrefix:@"tel:"]) {
                 url = number;
