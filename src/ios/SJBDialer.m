@@ -9,7 +9,7 @@
 
 
 
-#import "PhoneDialer.h"
+#import "SJBDialer.h"
 
 @implementation SJBDialer
 
