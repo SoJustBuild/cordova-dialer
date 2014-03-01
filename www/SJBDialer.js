@@ -10,18 +10,18 @@ module.exports = {
      * @param {String, Function} The phone number to call, The callback error function
      */
     dial: function(phnum, success, error) {
-	alert('dial called');
+	//alert('dial called');
         if (phnum == null)
             error("empty");
 try{
-alert("start exec");
+//alert("start exec");
         exec(function() {
-		alert('dial success');
+		//alert('dial success');
 		if (typeof success === 'function') {
 			success();
 		}
 	     }, function(err) {
-		alert('dial fail');
+		//alert('dial fail');
 		if (typeof err === 'function') {
 			error(err);
 		}
