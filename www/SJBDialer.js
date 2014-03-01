@@ -7,9 +7,6 @@ SJBDialer.prototype.dial = function(phnum) {
 	}catch(e){alert("dial failed"+e);}
 };
 
-if(!window.plugins) {
-    window.plugins = {};
-}
-if(!window.plugins.phoneDialer) {
-    window.plugins.phoneDialer = new PhoneDialer();
+if(!window.SJBDialerI) {
+    window.SJBDialerI = new SJBDialer();
 }
