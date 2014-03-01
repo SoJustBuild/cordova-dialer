@@ -18,6 +18,7 @@
 - (void)dial:(CDVInvokedUrlCommand*)command
 {
     [self.commandDelegate runInBackground:^{
+@try{
         CDVPluginResult* pluginResult = nil;
         NSString* url;
         NSString* number = [command.arguments objectAtIndex:0];
@@ -42,6 +43,11 @@
 
         // return result
         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+@catch (NSException *exception) {
+
+[self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"exception"] callbackId:command.callbackId];
+}
     }];
 }
 
