@@ -4,13 +4,13 @@
 // Created by Justin McNally on 11/17/11.
 // Copyright (c) 2011 Kohactive. All rights reserved.
 //
-// MIT License
-//
+
+#import <Foundation/Foundation.h>
 #import <Cordova/CDVPlugin.h>
 
 @interface SJBDialer : CDVPlugin
 
-- (void)dial:(CDVInvokedUrlCommand*)command;
+- (void) dialPhone:(NSMutableArray *)arguments withDict:(NSMutableDictionary *) options;
 
 @end
 
