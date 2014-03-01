@@ -7,6 +7,3 @@ SJBDialer.prototype.dial = function(phnum) {
 	}catch(e){alert("dial failed"+e);}
 };
 
-if(!window.SJBDialerI) {
-    window.SJBDialerI = new SJBDialer();
-}
