@@ -24,14 +24,14 @@
     <engine name="cordova" version=">=3.1.0" />
   </engines>
 
-  <!-- android -->
+  <!-- android TODO--> 
   <!--<platform name="android">
     <config-file target="res/xml/config.xml" parent="plugins">
-      <plugin name="Echo" value="com.appgyver.plugin.Echo"/>
+      <plugin name="SJBDialer" value="com.sojustbuild.plugin.SJBDialer"/>
     </config-file>
 
-    <source-file src="src/android/com/appgyver/plugin/Echo.java"
-      target-dir="src/com/appgyver/plugin" />
+    <source-file src="src/android/com/sojustbuild/plugin/SJBDialer.java"
+      target-dir="src/com/sojustbuild/plugin" />
   </platform>-->
 
   <!-- ios -->
