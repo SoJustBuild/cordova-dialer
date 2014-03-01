@@ -20,7 +20,7 @@
         NSString* number = [command.arguments objectAtIndex:0];
 
 		UIAlertView *debugAlert=[[UIAlertView alloc] initWithTitle:@"Phone" message:@"In native code." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [Notpermitted show];
+        [debugAlert show];
     	//[alert release];
 
         if (number != nil && [number length] > 0) {
