@@ -8,6 +8,7 @@
 
 #import "SJBDialer.h"
 #import <Cordova/CDV.h>
+#import <UIKit/UIKit.h>
 
 @implementation SJBDialer
 
