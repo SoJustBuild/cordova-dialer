@@ -13,6 +13,8 @@ module.exports = {
 	alert('dial called');
         if (phnum == null)
             error("empty");
+try{
+alert("start exec");
         exec(function() {
 		alert('dial success');
 		if (typeof success === 'function') {
@@ -24,6 +26,7 @@ module.exports = {
 			error(err);
 		}
         }, "SJBDialer", "dial", [phnum]);
+}catch(e){alert('err in dial: '+e);}
     },
 };
 
