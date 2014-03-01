@@ -18,14 +18,14 @@ module.exports = {
 
 		exec(
 			function() {
-				if (typeof success === 'function') {
+				//if (typeof success === 'function') {
 					success();
-				}
+				//}
 			},
 			function(err) {
-				if (typeof err === 'function') {
+				//if (typeof err === 'function') {
 					error(err);
-				}
+				//}
 			},
 			"SJBDialer", "dial", [phnum]
 		);
