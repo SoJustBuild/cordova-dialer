@@ -16,6 +16,4 @@
 
 - (void)dial:(CDVInvokedUrlCommand*)command;
 
-//- (void)hasPhone:(CDVInvokedUrlCommand*)command;
-
 @end

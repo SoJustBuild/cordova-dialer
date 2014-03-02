@@ -26,5 +26,5 @@ module.exports = {
 			},
 			"SJBDialer", "dial", [phnum]
 		);
-    }
+    },
 };
