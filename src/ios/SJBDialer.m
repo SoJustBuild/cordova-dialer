@@ -18,7 +18,6 @@
 - (void)dial:(CDVInvokedUrlCommand*)command
 {
     [self.commandDelegate runInBackground:^{
-@try{
         CDVPluginResult* pluginResult = nil;
         NSString* url;
         NSString* number = [command.arguments objectAtIndex:0];
@@ -42,39 +41,22 @@
         }
 
         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-}
-@catch (NSException *exception) {
-	[self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"exception"] callbackId:command.callbackId];
-}
     }];
 }
 
 - (void)hasPhone:(CDVInvokedUrlCommand*)command
 {
 	[self.commandDelegate runInBackground:^{
-		//[self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK] callbackId:command.callbackId];
-//@try{
 		CDVPluginResult* pluginResult = nil;
 		NSString* url = [NSString stringWithFormat:@"tel://"];
 		
-		pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"in native"];
-//UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Debug" message:@"in hasPhone native" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
-//[alert show];
 		if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:url]]) {
-//UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Debug" message:@"canOpenURL" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
-//[alert show];
 			pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
 		} else {
-//UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Debug" message:@"canOpenURL fail" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
-//[alert show];
 			pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"nophone"];
 		}
 
 		[self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-//}
-//@catch (NSException *exception) {
-//	[self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"exception"] callbackId:command.callbackId];
-//}
 	}];
 }
 
