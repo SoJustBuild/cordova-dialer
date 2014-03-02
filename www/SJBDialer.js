@@ -10,7 +10,8 @@ var exec = require('cordova/exec');
 module.exports = {
 
     /**
-     * Call the native dialer
+     * Call the native dialer. Note that no checks are done on the callbacks
+	 * for now so son't call it without proper callbacks!
      **/
     dial: function(phnum, success, error) {
         if (phnum == null)
@@ -18,16 +19,24 @@ module.exports = {
 
 		exec(
 			function() {
-				//if (typeof success === 'function') {
-					success();
-				//}
+				success();
 			},
 			function(err) {
-				//if (typeof err === 'function') {
-					error(err);
-				//}
+				error(err);
 			},
 			"SJBDialer", "dial", [phnum]
 		);
     },
+
+	hasPhone: function(successs, error) {
+		exec(
+			function() {
+				success();
+			},
+			function(err) {
+				error(err);
+			},
+			"SJBDialer", "hasPhone", []
+		);
+	},
 };

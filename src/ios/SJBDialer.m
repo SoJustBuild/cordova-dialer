@@ -41,13 +41,27 @@
             pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"empty"];
         }
 
-        // return result
         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 @catch (NSException *exception) {
 
 [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"exception"] callbackId:command.callbackId];
 }
+    }];
+}
+
+- (void)hasPhone:(CDVInvokedUrlCommand*)command
+{
+	[self.commandDelegate runInBackground:^{
+		CDVPluginResult* pluginResult = nil;
+		
+		if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"tel://"]]) {
+			pluginResult = pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+		} else {
+			pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"nophone"];
+		}
+
+		[self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
     }];
 }
 
