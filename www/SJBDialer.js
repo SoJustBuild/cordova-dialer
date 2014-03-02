@@ -27,4 +27,16 @@ module.exports = {
 			"SJBDialer", "dial", [phnum]
 		);
     },
+
+	hasPhone: function(successs, error) {
+		exec(
+			function() {
+				success();
+			},
+			function(err) {
+				error(err);
+			},
+			"SJBDialer", "hasPhone", []
+		);
+	},
 };
