@@ -51,7 +51,7 @@
 
 - (void)hasPhone:(CDVInvokedUrlCommand*)command
 {
-
+	[self.commandDelegate runInBackground:^{
 @try{
 		CDVPluginResult* pluginResult = nil;
 		
@@ -66,7 +66,7 @@
 @catch (NSException *exception) {
 	[self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"exception"] callbackId:command.callbackId];
 }
-
+	}];
 }
 
 @end
