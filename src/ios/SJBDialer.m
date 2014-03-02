@@ -48,7 +48,7 @@
 {
 	[self.commandDelegate runInBackground:^{
 		CDVPluginResult* pluginResult = nil;
-		NSString* url = [NSString stringWithFormat:@"tel://"];
+		NSString* url = @"tel://";
 		
 		if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:url]]) {
 			pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
