@@ -52,9 +52,10 @@
 - (void)hasPhone:(CDVInvokedUrlCommand*)command
 {
 	[self.commandDelegate runInBackground:^{
-		[self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK] callbackId:command.callbackId];
+		//[self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK] callbackId:command.callbackId];
 //@try{
-		//CDVPluginResult* pluginResult = nil;
+		CDVPluginResult* pluginResult = nil;
+		pluginResult = pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"in native"];
 //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Debug" message:@"in hasPhone native" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
 //[alert show];
 		//if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"tel://"]]) {
@@ -67,7 +68,7 @@
 			//pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"nophone"];
 		//}
 
-		//[self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+		[self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 //}
 //@catch (NSException *exception) {
 //	[self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"exception"] callbackId:command.callbackId];
