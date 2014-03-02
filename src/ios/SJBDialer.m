@@ -56,7 +56,7 @@
 		CDVPluginResult* pluginResult = nil;
 		
 		if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"tel://"]]) {
-			pluginResult = pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+			pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
 		} else {
 			pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"nophone"];
 		}
