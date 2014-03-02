@@ -52,10 +52,11 @@
 - (void)hasPhone:(CDVInvokedUrlCommand*)command
 {
 	[self.commandDelegate runInBackground:^{
+		[self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK] callbackId:command.callbackId];
 //@try{
 		//CDVPluginResult* pluginResult = nil;
-UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Debug" message:@"in hasPhone native" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
-[alert show];
+//UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Debug" message:@"in hasPhone native" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+//[alert show];
 		//if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"tel://"]]) {
 //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Debug" message:@"canOpenURL" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
 //[alert show];
