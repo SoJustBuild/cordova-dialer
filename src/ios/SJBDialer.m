@@ -50,20 +50,13 @@
 		CDVPluginResult* pluginResult = nil;
 		NSString* url = @"tel://";
 
-		@try{
-			if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:url]]) {
-				pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
-			} else {
-				pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"nophone"];
-			}
-
-			[self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-		}
-		@catch(NSException * e) {
-			[self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"exception"] callbackId:command.callbackId];
+		if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:url]]) {
+			pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+		} else {
+			pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"nophone"];
 		}
 
-		
+		[self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 	}];
 }
 

@@ -28,7 +28,7 @@ module.exports = {
 		);
     },
 
-	hasPhone: function(successs, error) {
+	hasPhone: function(success, error) {
 		exec(
 			function() {
 				success();
